@@ -1,0 +1,28 @@
+:root { --bg:#0f1115; --panel:#171a21; --line:#262b36; --text:#e6e8ee; --mute:#8b93a5; --accent:#6d8dff; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family: system-ui, sans-serif; }
+.app { display:grid; grid-template-columns:260px 1fr; height:100vh; }
+aside { background:var(--panel); border-right:1px solid var(--line); padding:20px; overflow:auto; }
+h1 { margin:0 0 16px; font-size:20px; }
+.btn { display:block; text-align:center; background:var(--accent); color:#fff; padding:10px; border-radius:8px; cursor:pointer; }
+.status { color:var(--mute); font-size:13px; min-height:18px; }
+aside ul { padding-left:18px; font-size:14px; color:var(--mute); }
+.link { background:none; border:0; color:var(--mute); text-decoration:underline; cursor:pointer; }
+main { display:flex; flex-direction:column; min-width:0; }
+.chat { flex:1; overflow:auto; padding:24px; display:flex; flex-direction:column; gap:14px; }
+.empty { color:var(--mute); margin:auto; }
+.msg { max-width:760px; padding:12px 16px; border-radius:12px; line-height:1.55; }
+.msg p { margin:0; }
+.msg.user { align-self:flex-end; background:var(--accent); }
+.msg.ai { background:var(--panel); border:1px solid var(--line); }
+details { margin-top:10px; font-size:13px; color:var(--mute); }
+blockquote { margin:8px 0; padding-left:10px; border-left:2px solid var(--line); }
+form { display:flex; gap:10px; padding:16px 24px; border-top:1px solid var(--line); }
+form input { flex:1; padding:12px; border-radius:8px; border:1px solid var(--line); background:var(--panel); color:var(--text); }
+form button { padding:0 22px; border:0; border-radius:8px; background:var(--accent); color:#fff; cursor:pointer; }
+@media (max-width:700px) { .app { grid-template-columns:1fr; grid-template-rows:auto 1fr; } aside { border-right:0; border-bottom:1px solid var(--line); } }
+.msg p { margin:0 0 8px; }
+.msg p:last-child { margin:0; }
+.msg.user p { white-space:pre-wrap; margin:0; }
+.msg ul { margin:0 0 8px; padding-left:20px; }
+.cite { color:var(--accent); font-weight:700; margin:0 1px; }
